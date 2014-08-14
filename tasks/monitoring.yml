@@ -1,0 +1,13 @@
+---
+- name: Upload Config | monit | statsd
+  template:
+    src: etc/monit/conf.d/statsd
+    dest: /etc/monit/conf.d/statsd
+
+- name: Trigger All Callbacks
+  meta: flush_handlers
+
+- name: Confirm Monitoring | statsd
+  monit:
+    state: present
+    name: statsd

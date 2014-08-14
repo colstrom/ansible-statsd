@@ -1,0 +1,23 @@
+---
+- name: Directory Exists | /data/log/statsd
+  file:
+    state: directory
+    path: /data/log/statsd
+    owner: root
+    group: wcmetrics
+    mode: 0775
+  tags:
+    - directory-structure
+    - logging
+    - statsd
+
+- name: Upload Config | beaver | statsd
+  template:
+    src: etc/beaver/conf.d/statsd
+    dest: /etc/beaver/conf.d/statsd
+  tags:
+    - configuration
+    - template-configuration
+    - logging
+    - using-beaver
+    - statsd

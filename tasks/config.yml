@@ -1,0 +1,32 @@
+---
+- name: Directory Exists | /var/run/statsd
+  file:
+    state: directory
+    path: /var/run/statsd
+    owner: root
+    group: wcmetrics
+    mode: 0775
+  tags:
+    - directory-structure
+    - runtime-data
+    - statsd
+
+- name: Upload Config | statsd
+  template:
+    src: etc/statsd/config.js
+    dest: /etc/statsd/config.js
+  tags:
+    - configuration
+    - template-configuration
+    - statsd
+
+- name: Upload initscript | statsd
+  template:
+    src: etc/init.d/statsd
+    dest: /etc/init.d/statsd
+    owner: root
+    group: wcmetrics
+    mode: 0755
+  tags:
+    - custom-initscript
+    - statsd

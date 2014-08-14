@@ -1,0 +1,3 @@
+---
+- name: Reload Service | monit | statsd
+  command: monit restart statsd
