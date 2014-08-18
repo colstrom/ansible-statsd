@@ -1,6 +1,6 @@
 ---
 - debug: msg='meta-statsd is incomplete! Failing at "meta-statsd | Confirm Monitoring | statsd" so that failing to start needs to be debugged. It's probably just a config or init file error.
-#- include: packages.yml
+#- include: install.yml
 #- include: config.yml
 #- include: logging.yml
 #- include: monitoring.yml

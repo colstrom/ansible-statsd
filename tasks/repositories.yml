@@ -1,6 +1,0 @@
----
-- name: Clone Repository | statsd
-  git:
-    repo: https://github.com/etsy/statsd.git
-    dest: /etc/statsd
-    version: v0.7.1
