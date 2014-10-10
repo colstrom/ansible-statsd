@@ -1,12 +1,5 @@
 ---
-- name: Install Packages | apt
-  apt:
-    state: latest
-    pkg: "{{ item }}"
-  with_items:
-    - python-pip
-
 - name: Install Packages | pip
   pip:
     state: latest
-    name: beaver
+    name: statsd
